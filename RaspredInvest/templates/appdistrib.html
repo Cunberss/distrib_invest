@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<table>
+<tr>
+    <td>
+        <h5>Количество предприятий:</h5>
+        <input required placeholder="3" value="3" size="10" id='users2' />
+    </td>
+    <td>
+        <br>
+        <p>- от 1 до 15 предприятий</p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <h5 >Количество капиталовложений:</h5>
+        <input   size="10" placeholder="5" value="5" id='users' />
+    </td>
+    <td>
+        <br>
+        <p>- не более 15</p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <h5>Размер капитала:</h5>
+        <input   size="10" placeholder="1000" value="1000"  id='users3' /><br><br>
+    </td>
+    <td>
+        <br>
+        <p>- не меньше количества капиталовложений, условные единицы</p>
+    </td>
+</tr>
+</table>
+
+<input type="button" class="btn btn-danger" id="but" value="Создать таблицу" onclick="start()" >
+
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

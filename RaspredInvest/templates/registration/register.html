@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block body %}
+<h2 align="center">Регистрация нового пользователя</h2>
+{% if user.is_authenticated %}
+<p>Вы уже авторизованы</p>
+    {% else %}
+<form method="post">
+    {% csrf_token %}
+
+    {% for f in form %}
+    <table align="center">
+<tr>
+  <td><label for="{{f.id_for_label}}">{{f.label}}: </label></td>
+</tr>
+<tr>
+  <td>{{ f }}</td>
+</tr>
+</table>
+    {% if f.errors %}
+    <table align="center">
+<tr>
+  <td><div class="alert alert-danger">{{f.errors}}</div></td>
+</tr>
+    {% endif%}
+    {% endfor %}
+    <p align="center"><br>
+    <input class='btn btn-danger' type="submit" value="Зарегистрироваться">
+    </p>
+</form>
+<div align="center">
+<p>Уже есть аккаунт?</p>
+<a class='btn btn-danger' href="/accounts/login">Войти</a>
+</div>
+    {% endif %}
+{% endblock %}
+{% block edition %}
+<p align="center">______________________</p>
+{% endblock %}

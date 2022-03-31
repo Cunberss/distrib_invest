@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2>Ваши результаты:</h2>
+{% if latest_text_list %}
+{% for a in latest_text_list %}
+    <a href="{% url 'appinvest:detail' a.id %}" class="btn btn-large btn-danger" >{{a.title}} </a><br><br>
+{% endfor %}
+{% else %}
+    История пуста
+{% endif %}
+
+{% endblock %}
