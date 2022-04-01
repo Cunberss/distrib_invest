@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'RaspredInvest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'd2gu8jll4amfc2',
+       'HOST': 'ec2-54-173-77-184.compute-1.amazonaws.com',
+       'PORT': 5432,
+       'USER': 'ttauiitjwnkfmv',
+       'PASSWORD': '1c53a212e4ebf904921a0f10f9f2f07c2d1ccf84860cb790a49ca33adf1c6ec0',
     }
 }
 

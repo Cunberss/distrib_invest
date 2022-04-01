@@ -1,1 +1,1 @@
-web: unicorn RaspredInvest.wsgi --log-file -
+web: gunicorn RaspredInvest.wsgi --log-file -
