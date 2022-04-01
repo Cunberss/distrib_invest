@@ -48,10 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ROOT_URLCONF = 'RaspredInvest.urls'
 
 TEMPLATES = [
@@ -78,12 +75,8 @@ WSGI_APPLICATION = 'RaspredInvest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'd2gu8jll4amfc2',
-       'HOST': 'ec2-54-173-77-184.compute-1.amazonaws.com',
-       'PORT': 5432,
-       'USER': 'ttauiitjwnkfmv',
-       'PASSWORD': '1c53a212e4ebf904921a0f10f9f2f07c2d1ccf84860cb790a49ca33adf1c6ec0',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -128,9 +121,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
