@@ -11,12 +11,19 @@ function start()
 
         var capital = parseInt(document.getElementById("users3").value);
 
+        if (x<0 || y<0)
+        {
+                location.reload();
+                alert("Не может быть отрицательного числа");
+                return;
+        }
+
         N = (capital/x);
         Nn = 0;
         var z = 0;
         if (capital < x)
                     {
-                    alert("Введенные данные некорректны");
+                    alert("Капитал не может быть меньше количества предприятий");
                     return;
                     }
         document.getElementById("but").style.visibility = "hidden";
@@ -254,5 +261,6 @@ function raspr()
         out_arr.innerHTML = strtable;
         var edition="<p>_______________________________<p>";
         document.body.innerHTML += edition;
+        window.scrollBy(0,250);
         alert('Результат получен!')
     }

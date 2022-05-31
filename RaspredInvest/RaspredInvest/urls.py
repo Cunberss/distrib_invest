@@ -13,6 +13,7 @@ urlpatterns = [
     path('distribution/', include('appinvest.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path("signup/", include('registration.urls')),
+    path('gosha/', views.gosha, name='gosha')
 ]
 
 urlpatterns += static('/media/Result Files', document_root=os.path.join(settings.BASE_DIR, 'media/Result Files/'))
